@@ -161,5 +161,7 @@ Write a program that asks for an employee’s age.
 '''
 
 empAge = input("Enter Employee's Age: ")
-print(isinstance(empAge,'str'))
+if isinstance(empAge,str) = True
+convEmpAge = int(empAge)
+print(f'{60-convEmpAge} is the retirement age at Inceptez)
 
