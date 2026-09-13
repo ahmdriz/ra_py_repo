@@ -3,7 +3,8 @@
 
 # A. Python is an indent based programming language
 # --------------------------------------------------------------------------- #
-'''
+"""
+"'''
 The following program throws an indentation error. Correct it and make sure it prints properly.
 
 teams = ['Data', 'AI', 'DevOps']
@@ -159,9 +160,121 @@ Write a program that asks for an employee’s age.
 2. Converts it to int (continue writing your program from here..)
 3. Prints the years pending for retirement, for eg. 60 is the retirement age.
 '''
-
+retireAge = 60
 empAge = input("Enter Employee's Age: ")
-if isinstance(empAge,str) = True
-convEmpAge = int(empAge)
-print(f'{60-convEmpAge} is the retirement age at Inceptez)
+if isinstance(empAge,str) == True:
+    convEmpAge = int(empAge)
+    print(f'You will retire in {retireAge-convEmpAge} years at Inceptez.',end='\n')
+#print(f'You will retire in {retireAge-int(empAge)} years at Inceptez.')
 
+# Use Case 2 (Debug):
+'''
+Fix the type error in the following code for salary calculation:
+
+salary = '50000'
+bonus = 10000
+print('Total Salary in Inceptez:', salary + bonus)
+'''
+
+salary = '50000'
+bonus = 10000
+print('Total Salary in Inceptez:', int(salary) + bonus)
+
+# G. Data types and casting
+# --------------------------------------------------------------------------- #
+# Use Case 1 — Employee Salary Breakdown Using Numeric & String Types
+'''
+Employee Salary Breakdown
+a. Write a program that asks the user for:
+employee_name (string)
+base_salary (float)
+hra_percent (integer)
+bonus_amount (float)
+
+B. Convert inputs to the correct datatype if required.
+Calculate:
+ HRA = base_salary * (hra_percent / 100)
+ Total Salary = base_salary + HRA + bonus_amount
+C. Print the output like this:
+Employee: Arun
+Base Salary: 40000.0
+HRA @ 20%: 8000.0
+Bonus: 5000.0
+Total Salary Payable: ₹53000.0
+'''
+
+employee_name = input("Enter Employee's Name: ")
+base_salary = float(input("Enter Base Salary: "))
+hra_percent = int(input("Enter HRA Percentage: "))
+bonus_amount = float(input("Enter Bonus Amount: "))
+
+HRA = base_salary * (hra_percent / 100)
+total_salary = base_salary + HRA + bonus_amount
+
+print(f'Employee: {employee_name}')
+print(f'Base Salary: {base_salary}')
+print(f'HRA @ {hra_percent}%: {HRA}')
+print(f'Total Salary Payable: {total_salary}')
+
+# Use Case 2: Student Result Classification
+'''
+a. Write a program that takes marks as input (initially as a string).
+B. Check if the value can be converted to float.
+C. Then classify (try using if condition with the help of AI, however we will learn about if condition soon):
+Marks >= 90 --> Outstanding
+ Marks >= 75 --> Excellent
+ Marks >= 50 --> Pass
+ Marks < 50 --> Fail
+D. If the input is not numeric, print:
+ Invalid marks entered — Please provide numeric input.
+'''
+"""
+
+marks=input("Enter Marks: ")
+try:
+    marks = float(marks)
+
+    if marks >= 90:
+        print('Outstanding')
+    elif marks >= 75:
+        print('Excellent')
+    elif marks >= 50:
+        print('Pass')
+    else:
+        print('Fail')
+except:
+    print('Invalid marks entered. Please provide numeri input.')
+
+# Use Case 3: Bug Fixing — Datatype Mismatch
+'''
+The below code is intended to calculate total price, but it has datatype errors. Fix it.
+Incorrect code:
+item_name = input("Enter product name: ")
+price = input("Enter price per item: ")
+quantity = input("Enter quantity: ")
+
+total_cost = price * quantity
+
+print("You purchased " + quantity + " units of " + item_name)
+print("Total payable: " + total_cost)
+
+Expected output after fixing:
+
+Enter product name: Notepad
+Enter price per item: 35.50
+Enter quantity: 3
+
+You purchased 3 units of Notepad
+Total payable: 106.5 INR
+'''
+
+item_name = input("Enter product name: ")
+price = input("Enter price per item: ")
+quantity = input("Enter quantity: ")
+
+total_cost = float(price) * int(quantity)
+
+print("You purchased " + quantity + " units of " + item_name)
+print("Total payable: " + str(total_cost) + ' INR')
+print('hi' , 5)
+#print(f'Total payable: {total_cost}')
